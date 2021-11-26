@@ -1,0 +1,20 @@
+[
+    {
+        "img": "../assets/images/museum-1.jpg",
+        "alt": "Louvre Museum",
+        "name": "Pyramid",
+        "button": "View Paintings"
+    },
+    {
+        "img": "../assets/images/museum-2.jpg",
+        "alt": "Louvre2",
+        "name": "War",
+        "button": "View Paintings"
+    },
+    {
+        "img": "../assets/images/museum-1.jpg",
+        "alt": "Lovre3",
+        "name": "Name2",
+        "button": "View Paintings"
+    }
+]
