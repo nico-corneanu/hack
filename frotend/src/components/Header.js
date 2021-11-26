@@ -8,18 +8,11 @@ import{ Button } from "./Button"
 const Header = () => {
   return (
     <Nav>
-      <NavLink to="/">EXPLORIX</NavLink>
+      <NavLink to="/">OMIDA-SPATIALA</NavLink>
       <Bars />
-      <NavMenu>
-        {menuData.map((item, index) => (
-          <NavLink to={item.link} key={index}>
-            {item.title}
-            </NavLink>
-        ))}
-      </NavMenu>
       <NavBtn>
         <Button primary="true" round="true" to="/trips">
-          Book a Flight
+          Become a guide
         </Button>
       </NavBtn>
     </Nav>

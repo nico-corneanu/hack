@@ -11,12 +11,12 @@ const Hero = () => {
             <HeroContent>
                 <HeroItems>
                     <HeroH1>
-                        Unreal Destinations
+                        Museums of the world
                     </HeroH1>
                     <HeroP>
-                        Out of this world
+                        Lose yourself in art
                     </HeroP>
-                    <Button primary="true" big="true" round="true" to="/trips">Travel Now</Button>
+                    <Button primary="true" big="true" round="true" to="/trips">Explore</Button>
                 </HeroItems>
             </HeroContent>
         </HeroContainer>
