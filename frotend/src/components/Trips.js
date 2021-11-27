@@ -43,7 +43,7 @@ const Trips = ({Heading}) => {
                                 {item.name}
                             </ProductTitle>
                         </TextWrap>
-                        <Button to="/trips" primary="true" round="true"
+                        <Button to="/museums-search" primary="true" round="true"
                         css={`
                         position: absolute;
                         top: 420px;

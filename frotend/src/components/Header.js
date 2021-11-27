@@ -5,14 +5,16 @@ import { Link } from "gatsby"
 import {FaBars} from 'react-icons/fa'
 import { menuData } from "../data/MenuData"
 import{ Button } from "./Button"
+import {Link as ALink} from 'react-router-dom'
+
 const Header = () => {
   return (
     <Nav>
       <NavLink to="/">OMIDA-SPATIALA</NavLink>
       <Bars />
       <NavBtn>
-        <Button primary="true" round="true" to="/trips">
-          Become a guide
+      <Button primary="true" round="true" to="/Signup">
+          Become / Get a guide
         </Button>
       </NavBtn>
     </Nav>

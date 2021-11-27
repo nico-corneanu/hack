@@ -7,6 +7,8 @@ import Hero from "../components/Hero"
 import Trips from "../components/Trips"
 import Testimonials from "../components/Testimonials"
 import Email from "../components/Email"
+import "bootstrap/dist/css/bootstrap.min.css"
+
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
