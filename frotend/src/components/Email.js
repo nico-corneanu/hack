@@ -60,6 +60,7 @@ const EmailContent = styled.div`
         margin-bottom: 1rem;
         font-size: clamp(1rem, 5vw, 3rem);
         padding: 0 1rem;
+        color:white;
     }
 
     p {
@@ -67,6 +68,7 @@ const EmailContent = styled.div`
         margin-bottom: 2rem;
         font-size: clamp(1rem, 2.5vw, 1.5rem);
         padding: 0 1rem;
+        color:white;
     }
 
     form {

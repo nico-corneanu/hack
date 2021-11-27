@@ -26,7 +26,7 @@ const Trips = ({Heading, paintings}) => {
                                <TextWrap>
 
                                    <ProductTitle>
-                                      <h3>{item.author}</h3>
+                                      <h3 css={`color=white;`}>{item.author}</h3>
                                        {item.title}
                                    </ProductTitle>
                                </TextWrap>
@@ -118,9 +118,12 @@ const TextWrap = styled.div`
 
     position: absolute;
     top: 340px;
+    color:white;
 `
 const ProductTitle = styled.div`
     font-weight: 400;
     font-size: 1rem;
     margin-left: 0.5rem;
+    color:white;
 `
+

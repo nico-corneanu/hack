@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import {useStaticQuery, graphql} from 'gatsby'
 import img1 from '../assets/images/museum-1.jpg'
@@ -6,29 +6,42 @@ import img2 from '../assets/images/museum-2.jpg'
 import img3 from '../assets/images/museum-3.jpg'
 import {Button } from './Button'
 import {ImLocation } from "react-icons/im"
+import Popup from './Popup'
+import Map from './Map';
 
 const images = [
     {
         img: img1,
-        name: 'museum1',
+        name: 'Louvre',
         alt: "Louvre Museum",
-        button: "View Paintings"
+        button: "View Paintings",
+        position: 0
     },
     {
         img: img2,
-        name: 'museum2',
+        name: 'The Hermitage',
         alt: "Louvre2",
-        button: "View Paintings"
+        button: "View Paintings",
+        position: 1
     },
     {
         img: img3,
-        name: 'museum3',
+        name: 'Museo del Prado',
         alt: "Lovre3",
-        button: "View Paintings"
+        button: "View Paintings",
+        position: 2
     }
 ]
 
 const Museums = ({Heading}) => {
+    const [buttonPopup, setButtonPopup] = useState(true);
+    const [btn, setBtn] = useState(false)
+    const [position, setPosition] = useState(0);
+    useEffect(() => {
+        setButtonPopup(!buttonPopup)
+        console.log(buttonPopup)
+    }, [btn])
+
     function getMuseums(images) {
 
         const museumsArray =[]
@@ -43,14 +56,50 @@ const Museums = ({Heading}) => {
                                 {item.name}
                             </ProductTitle>
                         </TextWrap>
-                        <Button to="/museums-search" primary="true" round="true"
-                        css={`
-                        position: absolute;
-                        top: 420px;
-                        font-size: 14px;
-                        `}>{item.button}</Button>
+                        <button onClick={() => {setPosition(item.position); setBtn(!btn) }} primary="true" round="true" 
+                            css={`
+                            position: absolute;
+                            top: 420px;
+                            font-size: 14px;
+                            background: ${({primary}) => (primary ? '#F26A2E' : '#077BF1')};
+                            white-space:nowrap;
+                            padding: ${({ big }) => (big ? '16px 40px' : '10px 32px')};
+                            color: #fff;
+                            font-size: ${({ big }) => (big ? '20px' : '16px')};
+                            outline: none;
+                            border: none;
+                            min-width: 100px;
+                            cursor: pointer;
+                            text-decoration: none;
+                            transition: 0.3s !important;
+                            border-radius: ${({ round }) => (round ? '50px' : 'none')};
+                        
+                            &:hover {
+                                background: ${({primary}) => (primary ? '#077BF1' : '#F26A2E')};
+                                transform: translateY(-2px);
+                        
+                            `}
+                        >
+                            See location
+                        </button>
+
+
+                        <Popup trigger={buttonPopup} setTrigger={
+                            setButtonPopup
+                        } css={`
+                            background-image:url(item.img) 
+                        `}>
+                            <div className='MapSize'>
+                                <Map position={position}/>
+                            </div>
+                            <div css={`
+                            width: 3vw;
+                            height: 3vh;`}>
+                            </div>
+                        </Popup>
                     </ProductInfo>
                 </ProductCard>
+                
             )
         })
         return museumsArray
@@ -149,4 +198,5 @@ const ProductTitle = styled.div`
     font-weight: 400;
     font-size: 1rem;
     margin-left: 0.5rem;
+    color:white;
 `

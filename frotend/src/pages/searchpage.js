@@ -55,6 +55,7 @@ function SearchPage() {
   },[inputValue])
 
   useEffect(() => {
+
     axios.get("http://localhost:5000/locations").then(
           res => {
               let vect = res.data;
@@ -99,8 +100,10 @@ function SearchPage() {
         MenuProps={MenuProps}
       />
       </div>
+
     </div>
     </div>
+    
     <div id = "cards">
       <Cards paintings={paintings}/>
     </div>

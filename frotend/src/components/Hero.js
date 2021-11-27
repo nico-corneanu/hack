@@ -16,7 +16,7 @@ const Hero = () => {
                     <HeroP>
                         Lose yourself in art
                     </HeroP>
-                    <Button primary="true" big="true" round="true" to="/museums-search">Explore</Button>
+                    <Button primary="true" big="true" round="true" to="/searchpage">Explore</Button>
                 </HeroItems>
             </HeroContent>
         </HeroContainer>
@@ -96,9 +96,11 @@ const HeroH1 = styled.h1`
     margin-bottom: 1.5rem;
     letter-spacing: 3px;
     padding: 0 1rem;
+    color: white;
 `
 
 const HeroP = styled.p`
     font-size: clamp(1rem, 3vw, 3rem);
     margin-bottom: 2rem;
+    color:white;
 `

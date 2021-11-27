@@ -5,6 +5,8 @@ import { FaRegLightbulb } from 'react-icons/fa'
 import img1 from '../assets/images/human-1.jpg'
 import img2 from '../assets/images/human-2.jpg'
 import img3 from '../assets/images/human-3.jpg'
+import Button from '../components/Button'
+import Quiz from './Quiz'
 const images = [
     {
         img: img1,
@@ -40,6 +42,10 @@ function getTrips(images) {
 const Testimonials = () => {
     return (
        <TestimonialsContainer>
+         <TextWrap>
+            <Description>Wanna test your knowledge about museums? Check below! </Description>
+            <Quiz></Quiz>
+        </TextWrap>
            <Description>
                What people are saying
            </Description>
@@ -120,15 +126,16 @@ font-size: clamp(1.5rem, 5vw, 2rem);
 font-weight: bold;
 `
 const Description = styled.p`
-    text-align: start;
+    text-align: center;
     padding-left: 2rem;
-    margin-bottom: 6rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
     font-size: clamp(1.5rem, 5vw, 2rem);
     font-weight: bold;
 `
 const ContentWrapper = styled.div`
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 1fr 0fr;
 padding: 0 2rem;
 
 @media screen and (max-width:768px) {
@@ -159,10 +166,19 @@ h3 {
 
 p {
     color: #3b3b3b;
+    width: 333px;
     margin-bottom: 15px;
 }
 `
 const Images = styled.img`
 border-radius: 10px;
 height: 100%;
+`
+
+const TextWrap = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    flex-direction: column;
 `
