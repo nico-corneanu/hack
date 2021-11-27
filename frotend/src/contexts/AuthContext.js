@@ -54,7 +54,7 @@ export function AuthProvider({ children }) {
     // setNewAge(age);
     // console.log(newAge);
     // createUser();
-    //console.log(email, password, age, name, description, role);
+    console.log(email, password,name, description, role);
     await addDoc(usersCollectionRef, {
       name: name,
       description: description,

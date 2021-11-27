@@ -28,12 +28,12 @@ const images = [
     }
 ]
 
-const Trips = ({Heading}) => {
-    function getTrips(images) {
+const Museums = ({Heading}) => {
+    function getMuseums(images) {
 
-        const tripsArray =[]
+        const museumsArray =[]
         images.map((item) => {
-            tripsArray.push(
+            museumsArray.push(
                 <ProductCard>
                     <ProductImg src={item.img}/>
                     <ProductInfo>
@@ -53,7 +53,7 @@ const Trips = ({Heading}) => {
                 </ProductCard>
             )
         })
-        return tripsArray
+        return museumsArray
     }
     return (
         <ProductAll>
@@ -62,14 +62,14 @@ const Trips = ({Heading}) => {
         </ProductsHeading>
        <ProductsContainer>
            <ProductsWrapper>
-               {getTrips(images)}
+               {getMuseums(images)}
            </ProductsWrapper>
        </ProductsContainer>
        </ProductAll>
     )
 }
 
-export default Trips
+export default Museums
 const ProductAll = styled.div`
     display: flex;
     flex-direction: column;

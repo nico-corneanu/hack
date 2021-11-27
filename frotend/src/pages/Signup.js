@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { Form, Card, Alert } from "react-bootstrap";
+import { Form, Card, Button, Alert } from "react-bootstrap";
 import { useAuth  } from "../contexts/AuthContext";
 import {useHistory } from "react-router-dom";
 import { AuthProvider } from "../contexts/AuthContext"
 import { Container } from "react-bootstrap"
-import {Button} from "../components/Button"
 import Video from '../assets/videos/video_museum.mp4'
 import styled from 'styled-components'
+import {Button as Button1} from '../components/Button'
 const sign_up = () => {
 
   return (
@@ -40,6 +40,7 @@ const  Signup = () =>  {
   const history = useHistory();
 
   async function handleSubmit(e) {
+    console.log("submit")
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -100,19 +101,36 @@ const  Signup = () =>  {
             </Form.Group>
             <Button primary="true" round="true" className="w-100" type="submit"
             css={`
+            background: ${({primary}) => (primary ? '#F26A2E' : '#077BF1')};
+            white-space:nowrap;
             text-align: center;
             margin-top: 5%;
+            color: #fff;
+            font-size: ${({ big }) => (big ? '20px' : '16px')};
+            outline: none;
+            border: none;
+            min-width: 100px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s !important;
+            border-radius: ${({ round }) => (round ? '50px' : 'none')};
+
+            &:hover {
+                background: ${({primary}) => (primary ? '#077BF1' : '#F26A2E')};
+                transform: translateY(-2px);
+
+            }
             `}>
               Sign Up
             </Button>
           </Form>
           <div className="w-100 text-center mt-2" >
         Already have an account? 
-        <Button primary="true" round="true" to="/Login"  css={`
+        <Button1 primary="true" round="true" to="/Login"  css={`
             padding: 5px 35px !important;
             `}>
           Login
-        </Button>
+        </Button1>
       </div>
         </Card.Body>
       </Card>
